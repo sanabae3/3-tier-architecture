@@ -1,2 +1,2 @@
 namespace = "my-3-tier-architecture"
-region    = "us-west-2"
+region    = "us-east-1"
