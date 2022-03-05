@@ -26,15 +26,13 @@ resource "aws_launch_template" "webserver" {
   image_id      = data.aws_ami.ubuntu.id
   instance_type = "t2.micro"
   user_data     = data.cloudinit_config.config.rendered
-  key_name      = var.aws_access_key_id
-  secret_key_name = var.aws_secret_access_key_id
-  }
-  
-iam_instance_profile {
+  key_name      = var.ssh_keypair
+  iam_instance_profile {
     name = module.iam_instance_profile.name
-  
+  }
   vpc_security_group_ids = [var.sg.websvr]
 }
+
 
 resource "aws_autoscaling_group" "webserver" {
   name                = "${var.namespace}-asg"
