@@ -2,10 +2,12 @@ variable "namespace" {
   type = string
 }
 
-variable "ssh_keypair" {
+variable "access_key_id" {
   type = string
 }
-
+variable "secret_access_key_id" {
+  type = string
+}
 variable "vpc" {
   type = any
 }
