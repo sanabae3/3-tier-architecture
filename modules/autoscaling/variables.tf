@@ -2,10 +2,10 @@ variable "namespace" {
   type = string
 }
 
-variable "access_key_id" {
+variable "aws_access_key_id" {
   type = string
 }
-variable "secret_access_key_id" {
+variable "aws_secret_access_key_id" {
   type = string
 }
 variable "vpc" {
