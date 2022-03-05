@@ -29,7 +29,8 @@ resource "aws_launch_template" "webserver" {
   key_name      = var.aws_access_key_id
   secret_key_name = var.aws_secret_access_key_id
   }
-  iam_instance_profile {
+  
+iam_instance_profile {
     name = module.iam_instance_profile.name
   
   vpc_security_group_ids = [var.sg.websvr]
